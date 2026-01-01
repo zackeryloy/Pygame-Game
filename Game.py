@@ -9,6 +9,13 @@ import pygame
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 
+# common colors
+
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+GREEN = (0, 255, 0)
+
+
 
 
 
@@ -35,7 +42,7 @@ def main():
         screen.fill("black")
 
         # draw the snake
-        pygame.draw.circle(screen, (0,255,0), player_pos, 40)
+        pygame.draw.circle(screen, GREEN, player_pos, 40)
         pygame.display.flip()
 
         keys = pygame.key.get_pressed()
@@ -48,9 +55,29 @@ def main():
         if keys[pygame.K_d]:
             player_pos.x += 300 * dt
 
-        pygame.display.flip()
+        #pygame.display.flip()
 
+        #dt = clock.tick(60) / 1000
+
+
+
+        # class for game objects
+        class Food:
+            def __init__(self,color,center):
+                self.color = color
+                self.center = center
+
+            def draw(self):
+                pygame.draw.circle(screen, self.color, self.center, 16)
+
+        # using the Food class to create game pieces
+        food1 = Food(RED, (SCREEN_WIDTH/2,SCREEN_HEIGHT/2))
+        food1.draw()
+
+        pygame.display.flip()
         dt = clock.tick(60) / 1000
+
+
 
 
 
