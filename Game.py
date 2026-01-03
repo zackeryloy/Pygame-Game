@@ -6,6 +6,7 @@ loot finder maybe mobile swipe game
 """
 import pygame
 
+# set the screen dimensions
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 
