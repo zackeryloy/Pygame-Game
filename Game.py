@@ -11,7 +11,6 @@ SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 
 # common colors
-
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
@@ -56,11 +55,6 @@ def main():
         if keys[pygame.K_d]:
             player_pos.x += 300 * dt
 
-        #pygame.display.flip()
-
-        #dt = clock.tick(60) / 1000
-
-
 
         # class for game objects
         class Food:
@@ -75,13 +69,15 @@ def main():
         food1 = Food(RED, (SCREEN_WIDTH/2,SCREEN_HEIGHT/2))
         food1.draw()
 
+
+        # display the objects and set FPS to 60
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
 
 
 
-
+# call the main function
 main()
 
 
@@ -89,5 +85,5 @@ main()
 
 
 
-
+# force quit if something goes wrong
 pygame.quit()
