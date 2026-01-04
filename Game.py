@@ -45,6 +45,7 @@ def main():
         pygame.draw.circle(screen, GREEN, player_pos, 40)
         pygame.display.flip()
 
+        # adds keybinds for the snake to move
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
             player_pos.y -= 300 * dt
